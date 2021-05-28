@@ -41,6 +41,7 @@ class SplashActivity : AppCompatActivity() {
         val slideTop = AnimationUtils.loadAnimation(this, R.anim.splash_anim)
         val slideBottom = AnimationUtils.loadAnimation(this, R.anim.splash_anim_text)
 
+        // add animation
         with(binding){
             imgLogo.startAnimation(slideTop)
             tvLogo.startAnimation(slideBottom)
