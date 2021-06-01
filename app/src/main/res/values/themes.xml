@@ -18,4 +18,7 @@
         <item name="android:fontFamily">@font/poppins_semibold</item>
     </style>
 
+    <style name="TextTitleSize" parent="TextAppearance.AppCompat.Widget.ActionBar.Title">
+        <item name="android:textSize">16sp</item>
+    </style>
 </resources>

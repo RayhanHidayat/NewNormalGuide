@@ -2,6 +2,11 @@ package com.rayhan.newnormalguide.ui.home
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import androidx.navigation.fragment.NavHostFragment
+import androidx.navigation.ui.AppBarConfiguration
+import androidx.navigation.ui.setupActionBarWithNavController
+import androidx.navigation.ui.setupWithNavController
+import com.rayhan.newnormalguide.R
 import com.rayhan.newnormalguide.databinding.ActivityHomeBinding
 
 class HomeActivity : AppCompatActivity() {
@@ -14,5 +19,13 @@ class HomeActivity : AppCompatActivity() {
         setContentView(binding.root)
         setSupportActionBar(binding.toolbar)
 
+        val navHostFragment =
+            supportFragmentManager.findFragmentById(R.id.fragmentContainerView) as NavHostFragment
+        val navHostController = navHostFragment.navController
+
+        val actionBarConf = AppBarConfiguration(listFragment.fragmentSet)
+        setupActionBarWithNavController(navHostController, actionBarConf)
+
+        binding.bottomNavigationView.setupWithNavController(navHostController)
     }
 }
