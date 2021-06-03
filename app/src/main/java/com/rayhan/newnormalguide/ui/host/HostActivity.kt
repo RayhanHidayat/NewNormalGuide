@@ -1,4 +1,4 @@
-package com.rayhan.newnormalguide.ui.home
+package com.rayhan.newnormalguide.ui.host
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
@@ -7,15 +7,15 @@ import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import com.rayhan.newnormalguide.R
-import com.rayhan.newnormalguide.databinding.ActivityHomeBinding
+import com.rayhan.newnormalguide.databinding.ActivityHostBinding
 
-class HomeActivity : AppCompatActivity() {
+class HostActivity : AppCompatActivity() {
 
-    private lateinit var binding: ActivityHomeBinding
+    private lateinit var binding: ActivityHostBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityHomeBinding.inflate(layoutInflater)
+        binding = ActivityHostBinding.inflate(layoutInflater)
         setContentView(binding.root)
         setSupportActionBar(binding.toolbar)
 

@@ -1,4 +1,4 @@
-package com.rayhan.newnormalguide.ui.home
+package com.rayhan.newnormalguide.ui.host
 
 import com.rayhan.newnormalguide.R
 

@@ -10,7 +10,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
 import com.rayhan.newnormalguide.R
 import com.rayhan.newnormalguide.databinding.ActivitySplashBinding
-import com.rayhan.newnormalguide.ui.home.HomeActivity
+import com.rayhan.newnormalguide.ui.host.HostActivity
 import splitties.activities.start
 
 class SplashActivity : AppCompatActivity() {
@@ -57,6 +57,6 @@ class SplashActivity : AppCompatActivity() {
 
     private fun goToMainActivity() {
         finish()
-        start<HomeActivity> { }
+        start<HostActivity> { }
     }
 }
