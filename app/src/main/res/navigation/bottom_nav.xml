@@ -7,22 +7,22 @@
 
     <fragment
         android:id="@+id/mainFragment"
-        android:name="com.rayhan.newnormalguide.MainFragment"
+        android:name="com.rayhan.newnormalguide.ui.main.MainFragment"
         android:label="Home"
         tools:layout="@layout/fragment_main" />
     <fragment
         android:id="@+id/statsFragment"
-        android:name="com.rayhan.newnormalguide.StatsFragment"
+        android:name="com.rayhan.newnormalguide.ui.stats.StatsFragment"
         android:label="Stats"
         tools:layout="@layout/fragment_stats" />
     <fragment
         android:id="@+id/guideFragment"
-        android:name="com.rayhan.newnormalguide.GuideFragment"
+        android:name="com.rayhan.newnormalguide.ui.guide.GuideFragment"
         android:label="Guide"
         tools:layout="@layout/fragment_guide" />
     <fragment
         android:id="@+id/infoFragment"
-        android:name="com.rayhan.newnormalguide.InfoFragment"
+        android:name="com.rayhan.newnormalguide.ui.info.InfoFragment"
         android:label="Info"
         tools:layout="@layout/fragment_info" />
 </navigation>

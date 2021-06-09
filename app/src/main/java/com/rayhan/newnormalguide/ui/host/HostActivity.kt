@@ -2,10 +2,11 @@ package com.rayhan.newnormalguide.ui.host
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import androidx.navigation.findNavController
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.AppBarConfiguration
+import androidx.navigation.ui.NavigationUI
 import androidx.navigation.ui.setupActionBarWithNavController
-import androidx.navigation.ui.setupWithNavController
 import com.rayhan.newnormalguide.R
 import com.rayhan.newnormalguide.databinding.ActivityHostBinding
 
@@ -21,11 +22,17 @@ class HostActivity : AppCompatActivity() {
 
         val navHostFragment =
             supportFragmentManager.findFragmentById(R.id.fragmentContainerView) as NavHostFragment
-        val navHostController = navHostFragment.navController
+        val navController = navHostFragment.navController
 
         val actionBarConf = AppBarConfiguration(listFragment.fragmentSet)
-        setupActionBarWithNavController(navHostController, actionBarConf)
+        setupActionBarWithNavController(navController, actionBarConf)
 
-        binding.bottomNavigationView.setupWithNavController(navHostController)
+        // binding.bottomNavigationView.setupWithNavController(navController)
+        NavigationUI.setupWithNavController(binding.bottomNavigationView, navController)
+    }
+
+    override fun onSupportNavigateUp(): Boolean {
+        val navController = this.findNavController(R.id.fragmentContainerView)
+        return navController.navigateUp()
     }
 }

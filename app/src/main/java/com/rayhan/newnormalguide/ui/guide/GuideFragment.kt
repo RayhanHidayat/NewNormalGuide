@@ -15,7 +15,7 @@ class GuideFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        binding = FragmentGuideBinding.inflate(layoutInflater, container, false)
+        binding = FragmentGuideBinding.inflate(inflater, container, false)
         return binding.root
     }
 
