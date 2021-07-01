@@ -24,7 +24,7 @@ class HostActivity : AppCompatActivity() {
             supportFragmentManager.findFragmentById(R.id.fragmentContainerView) as NavHostFragment
         val navController = navHostFragment.navController
 
-        val actionBarConf = AppBarConfiguration(listFragment.fragmentSet)
+        val actionBarConf = AppBarConfiguration(ListFragment.fragmentSet)
         setupActionBarWithNavController(navController, actionBarConf)
 
         // binding.bottomNavigationView.setupWithNavController(navController)

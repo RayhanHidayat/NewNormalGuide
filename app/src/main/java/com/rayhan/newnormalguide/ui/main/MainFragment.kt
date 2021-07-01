@@ -6,11 +6,13 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.rayhan.newnormalguide.databinding.FragmentMainBinding
+import com.rayhan.newnormalguide.ui.detail_stats.DetailStatsActivity
 import com.smarteist.autoimageslider.IndicatorView.animation.type.IndicatorAnimationType
 import com.smarteist.autoimageslider.SliderAnimations
+import splitties.fragments.start
 
 
-class MainFragment : Fragment() {
+class MainFragment : Fragment(), View.OnClickListener {
 
     private lateinit var binding: FragmentMainBinding
 
@@ -31,8 +33,8 @@ class MainFragment : Fragment() {
 
             val adapter = ImageSliderAdapter(urls)
 
-
             with(binding) {
+                cvStats.setOnClickListener(this@MainFragment)
                 imageSlider.setSliderAdapter(adapter)
                 imageSlider.setIndicatorAnimation(IndicatorAnimationType.WORM)
                 imageSlider.setSliderTransformAnimation(SliderAnimations.SIMPLETRANSFORMATION)
@@ -42,4 +44,11 @@ class MainFragment : Fragment() {
 
         }
     }
+
+    override fun onClick(v: View?) {
+        when(v){
+            binding.cvStats -> start<DetailStatsActivity>()
+        }
+    }
+
 }

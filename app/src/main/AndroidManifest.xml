@@ -11,6 +11,7 @@
         android:roundIcon="@drawable/logo_new_nomal_guide_white"
         android:supportsRtl="true"
         android:theme="@style/Theme.NewNormalGuide">
+        <activity android:name=".ui.detail_stats.DetailStatsActivity"></activity>
         <activity android:name=".ui.splash.SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -18,7 +19,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ui.host.HostActivity"></activity>
+        <activity android:name=".ui.host.HostActivity" />
 
         <meta-data
             android:name="preloaded_fonts"

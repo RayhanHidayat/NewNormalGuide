@@ -25,4 +25,9 @@
         android:name="com.rayhan.newnormalguide.ui.info.InfoFragment"
         android:label="Info"
         tools:layout="@layout/fragment_info" />
+    <fragment
+        android:id="@+id/hotlineFragment"
+        android:name="com.rayhan.newnormalguide.ui.hotline.HotlineFragment"
+        android:label="Hotline"
+        tools:layout="@layout/fragment_hotline" />
 </navigation>
