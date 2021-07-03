@@ -11,4 +11,10 @@
     <string name="positif">Positif</string>
     <string name="meninggal">Meninggal</string>
     <string name="zero">0</string>
+    <string name="negative">Negative</string>
+    <string name="positive">Positive</string>
+    <string name="deaths">Deaths</string>
+    <string name="one_week">1 Week</string>
+    <string name="one_month">1 Month</string>
+    <string name="max">Max</string>
 </resources>

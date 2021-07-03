@@ -1,8 +1,11 @@
 package com.rayhan.newnormalguide.data.api
 
+import android.os.Parcelable
 import com.google.gson.annotations.SerializedName
+import kotlinx.parcelize.Parcelize
 import java.util.*
 
+@Parcelize
 data class ApiData(
     @SerializedName("dateChecked")
     val dateChecked: Date,
@@ -20,4 +23,4 @@ data class ApiData(
     val deathIncrease: Int,
     @SerializedName("state")
     val state: String
-)
+) : Parcelable
