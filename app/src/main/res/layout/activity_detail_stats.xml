@@ -69,7 +69,8 @@
     <com.robinhood.spark.SparkView
         android:id="@+id/sv_chart"
         android:layout_width="wrap_content"
-        android:layout_height="150dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/rg_time"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/rg_case" />
@@ -80,9 +81,9 @@
         android:layout_height="wrap_content"
         android:gravity="center"
         android:orientation="horizontal"
+        app:layout_constraintBottom_toTopOf="@+id/tv_data"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/sv_chart">
+        app:layout_constraintStart_toStartOf="parent">
 
         <RadioButton
             android:id="@+id/rb_week"
@@ -111,8 +112,24 @@
         android:id="@+id/tv_date"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginBottom="15dp"
+        android:fontFamily="@font/poppins_bold"
+        android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        tools:text="coba" />
+        tools:text="May 21, 2002" />
+
+    <TextView
+        android:id="@+id/tv_data"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="50dp"
+        android:fontFamily="@font/poppins_bold"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/tv_date"
+        tools:text="1000" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

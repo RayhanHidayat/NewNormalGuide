@@ -6,6 +6,10 @@ import com.rayhan.newnormalguide.databinding.ActivityDetailStatsBinding
 
 class DetailStatsActivity : AppCompatActivity() {
 
+    companion object {
+        const val EXTRA_STATS = ""
+    }
+
     private lateinit var binding: ActivityDetailStatsBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {

@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.viewModels
 import com.rayhan.newnormalguide.databinding.FragmentMainBinding
 import com.rayhan.newnormalguide.ui.detail_stats.DetailStatsActivity
 import com.smarteist.autoimageslider.IndicatorView.animation.type.IndicatorAnimationType
@@ -14,7 +15,9 @@ import splitties.fragments.start
 
 class MainFragment : Fragment(), View.OnClickListener {
 
+    private val year = 364
     private lateinit var binding: FragmentMainBinding
+    private val mainViewModel by viewModels<MainViewModel>()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -33,6 +36,15 @@ class MainFragment : Fragment(), View.OnClickListener {
 
             val adapter = ImageSliderAdapter(urls)
 
+            mainViewModel.getNationalData()
+            mainViewModel.nationData.observe(viewLifecycleOwner, {
+                binding.run {
+                    tvPositif.text = it[year].positive.toString()
+                    tvSembuh.text = it[year].negative.toString()
+                    tvDeath.text = it[year].death.toString()
+                }
+            })
+
             with(binding) {
                 cvStats.setOnClickListener(this@MainFragment)
                 imageSlider.setSliderAdapter(adapter)
@@ -46,7 +58,7 @@ class MainFragment : Fragment(), View.OnClickListener {
     }
 
     override fun onClick(v: View?) {
-        when(v){
+        when (v) {
             binding.cvStats -> start<DetailStatsActivity>()
         }
     }

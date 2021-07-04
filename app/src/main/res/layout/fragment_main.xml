@@ -84,31 +84,34 @@
             <TableRow>
 
                 <TextView
+                    android:id="@+id/tv_sembuh"
                     android:layout_width="0dp"
                     android:fontFamily="@font/poppins_medium"
                     android:gravity="center"
                     android:padding="3dp"
                     android:text="@string/zero"
                     android:textColor="#009688"
-                    android:textSize="30sp" />
+                    android:textSize="25sp" />
 
                 <TextView
+                    android:id="@+id/tv_positif"
                     android:layout_width="0dp"
                     android:fontFamily="@font/poppins_medium"
                     android:gravity="center"
                     android:padding="3dp"
                     android:text="@string/zero"
                     android:textColor="#EE691E"
-                    android:textSize="30sp" />
+                    android:textSize="25sp" />
 
                 <TextView
+                    android:id="@+id/tv_death"
                     android:layout_width="0dp"
                     android:fontFamily="@font/poppins_medium"
                     android:gravity="center"
                     android:padding="3dp"
                     android:text="@string/zero"
                     android:textColor="#EE1E1E"
-                    android:textSize="30sp" />
+                    android:textSize="25sp" />
             </TableRow>
         </TableLayout>
 

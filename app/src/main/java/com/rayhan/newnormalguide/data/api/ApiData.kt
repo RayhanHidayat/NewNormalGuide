@@ -9,8 +9,8 @@ import java.util.*
 data class ApiData(
     @SerializedName("dateChecked")
     val dateChecked: Date,
-    @SerializedName("recovered")
-    val recovered: Int,
+    @SerializedName("negative")
+    val negative: Int,
     @SerializedName("positive")
     val positive: Int,
     @SerializedName("death")
