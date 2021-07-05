@@ -47,6 +47,7 @@
             android:id="@+id/rb_negative"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:buttonTint="?attr/colorSecondaryVariant"
             android:fontFamily="@font/poppins_medium"
             android:text="@string/negative" />
 
@@ -54,6 +55,7 @@
             android:id="@+id/rb_positive"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:buttonTint="?attr/colorSecondaryVariant"
             android:fontFamily="@font/poppins_medium"
             android:text="@string/positive" />
 
@@ -61,6 +63,7 @@
             android:id="@+id/rb_death"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:buttonTint="?attr/colorSecondaryVariant"
             android:fontFamily="@font/poppins_medium"
             android:text="@string/deaths" />
 
@@ -89,6 +92,7 @@
             android:id="@+id/rb_week"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:buttonTint="?attr/colorSecondaryVariant"
             android:fontFamily="@font/poppins_medium"
             android:text="@string/one_week" />
 
@@ -96,6 +100,7 @@
             android:id="@+id/rb_month"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:buttonTint="?attr/colorSecondaryVariant"
             android:fontFamily="@font/poppins_medium"
             android:text="@string/one_month" />
 
@@ -103,6 +108,7 @@
             android:id="@+id/rb_max"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:buttonTint="?attr/colorSecondaryVariant"
             android:fontFamily="@font/poppins_medium"
             android:text="@string/max" />
 

@@ -11,6 +11,7 @@ import com.rayhan.newnormalguide.ui.detail_stats.DetailStatsActivity
 import com.smarteist.autoimageslider.IndicatorView.animation.type.IndicatorAnimationType
 import com.smarteist.autoimageslider.SliderAnimations
 import splitties.fragments.start
+import java.text.NumberFormat
 
 
 class MainFragment : Fragment(), View.OnClickListener {
@@ -39,9 +40,9 @@ class MainFragment : Fragment(), View.OnClickListener {
             mainViewModel.getNationalData()
             mainViewModel.nationData.observe(viewLifecycleOwner, {
                 binding.run {
-                    tvPositif.text = it[year].positive.toString()
-                    tvSembuh.text = it[year].negative.toString()
-                    tvDeath.text = it[year].death.toString()
+                    tvPositif.text = NumberFormat.getInstance().format(it.last().positive)
+                    tvSembuh.text = NumberFormat.getInstance().format(it.last().negative)
+                    tvDeath.text = NumberFormat.getInstance().format(it.last().death)
                 }
             })
 
