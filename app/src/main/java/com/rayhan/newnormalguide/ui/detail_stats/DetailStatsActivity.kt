@@ -14,6 +14,7 @@ class DetailStatsActivity : AppCompatActivity() {
         const val EXTRA_STATS = ""
     }
 
+    private lateinit var adapter: ChartSparkAdapter
     private lateinit var binding: ActivityDetailStatsBinding
     private val detStatsViewModel by viewModels<DetStatsViewModel>()
 
@@ -34,19 +35,34 @@ class DetailStatsActivity : AppCompatActivity() {
         detStatsViewModel.nationData.observe(this, {
 
             binding.run {
-                val adapter = ChartSparkAdapter(it.reversed())
+                adapter = ChartSparkAdapter(it.reversed())
                 svChart.adapter = adapter
 
                 rbPositive.isChecked = true
                 rbMonth.isChecked = true
 
                 renderDisplayWithData(it.last())
+                setUpEventListener()
             }
         })
     }
 
+    private fun setUpEventListener() {
+        binding.svChart.isScrubEnabled = true
+        binding.svChart.setScrubListener {
+            if (it is ApiData) {
+                renderDisplayWithData(it)
+            }
+        }
+    }
+
     private fun renderDisplayWithData(data: ApiData) {
-        binding.tvData.text = NumberFormat.getInstance().format(data.positiveIncrease)
+        val typeCases = when (adapter.type) {
+            ChartTypes.POSITIVE -> data.positiveIncrease
+            ChartTypes.NEGATIVE -> data.negativeIncrease
+            ChartTypes.DEATH -> data.deathIncrease
+        }
+        binding.tvData.text = NumberFormat.getInstance().format(typeCases)
         val displayDateFormat = SimpleDateFormat("MMM dd, yyyy")
         binding.tvDate.text = displayDateFormat.format(data.dateChecked)
     }
