@@ -44,27 +44,22 @@
         app:layout_constraintTop_toBottomOf="@+id/tv_title">
 
         <RadioButton
+            style="@style/RadioButtonCustom"
             android:id="@+id/rb_negative"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:buttonTint="?attr/colorSecondaryVariant"
-            android:fontFamily="@font/poppins_medium"
             android:text="@string/negative" />
 
         <RadioButton
             android:id="@+id/rb_positive"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:buttonTint="?attr/colorSecondaryVariant"
-            android:fontFamily="@font/poppins_medium"
             android:text="@string/positive" />
 
         <RadioButton
             android:id="@+id/rb_death"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:buttonTint="?attr/colorSecondaryVariant"
-            android:fontFamily="@font/poppins_medium"
             android:text="@string/deaths" />
 
     </RadioGroup>
@@ -73,6 +68,9 @@
         android:id="@+id/sv_chart"
         android:layout_width="wrap_content"
         android:layout_height="0dp"
+        android:paddingTop="8dp"
+        android:paddingBottom="16dp"
+        android:background="@color/colorBackgroundShadow"
         app:layout_constraintBottom_toTopOf="@+id/rg_time"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -83,7 +81,10 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
+        android:background="@color/colorBackgroundShadow"
         android:orientation="horizontal"
+        android:layout_marginTop="8dp"
+        android:paddingBottom="5dp"
         app:layout_constraintBottom_toTopOf="@+id/tv_date"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent">
@@ -92,24 +93,18 @@
             android:id="@+id/rb_week"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:buttonTint="?attr/colorSecondaryVariant"
-            android:fontFamily="@font/poppins_medium"
             android:text="@string/one_week" />
 
         <RadioButton
             android:id="@+id/rb_month"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:buttonTint="?attr/colorSecondaryVariant"
-            android:fontFamily="@font/poppins_medium"
             android:text="@string/one_month" />
 
         <RadioButton
             android:id="@+id/rb_max"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:buttonTint="?attr/colorSecondaryVariant"
-            android:fontFamily="@font/poppins_medium"
             android:text="@string/max" />
 
     </RadioGroup>
@@ -119,6 +114,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="30dp"
+        android:paddingTop="5dp"
         android:layout_marginBottom="32dp"
         android:fontFamily="@font/poppins_bold"
         android:textSize="16sp"
@@ -131,9 +127,9 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="50dp"
+        android:layout_marginBottom="15dp"
         android:fontFamily="@font/poppins_bold"
         android:textSize="30sp"
-        android:layout_marginBottom="15dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/tv_date"

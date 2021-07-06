@@ -12,4 +12,5 @@
     <color name="colorNegative">#009688</color>
     <color name="colorPositive">#EE691E</color>
     <color name="colorDeath">#EE1E1E</color>
+    <color name="colorBackgroundShadow">#EBEEF6</color>
 </resources>
