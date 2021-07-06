@@ -2,11 +2,15 @@ package com.rayhan.newnormalguide.ui.detail_stats
 
 import android.os.Bundle
 import androidx.activity.viewModels
+import androidx.annotation.ColorInt
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.ContextCompat
+import com.rayhan.newnormalguide.R
 import com.rayhan.newnormalguide.data.api.ApiData
 import com.rayhan.newnormalguide.databinding.ActivityDetailStatsBinding
 import java.text.NumberFormat
 import java.text.SimpleDateFormat
+import java.util.*
 
 class DetailStatsActivity : AppCompatActivity() {
 
@@ -14,6 +18,7 @@ class DetailStatsActivity : AppCompatActivity() {
         const val EXTRA_STATS = ""
     }
 
+    private lateinit var currentlyShownData: List<ApiData>
     private lateinit var adapter: ChartSparkAdapter
     private lateinit var binding: ActivityDetailStatsBinding
     private val detStatsViewModel by viewModels<DetStatsViewModel>()
@@ -35,13 +40,15 @@ class DetailStatsActivity : AppCompatActivity() {
         detStatsViewModel.nationData.observe(this, {
 
             binding.run {
+                currentlyShownData = it
+
                 adapter = ChartSparkAdapter(it.reversed())
                 svChart.adapter = adapter
 
                 rbPositive.isChecked = true
                 rbMonth.isChecked = true
 
-                renderDisplayWithData(it.last())
+                updateDisplayChart(ChartTypes.POSITIVE)
                 setUpEventListener()
             }
         })
@@ -54,6 +61,42 @@ class DetailStatsActivity : AppCompatActivity() {
                 renderDisplayWithData(it)
             }
         }
+
+        binding.rgTime.setOnCheckedChangeListener { _, checkedId ->
+            adapter.time = when (checkedId) {
+                binding.rbWeek.id -> TimeStamps.WEEK
+                binding.rbMonth.id -> TimeStamps.MONTH
+                else -> TimeStamps.MAX
+            }
+
+            renderDisplayWithData(currentlyShownData.last())
+            adapter.notifyDataSetChanged()
+        }
+        binding.rgCase.setOnCheckedChangeListener { _, checkedId ->
+            when (checkedId) {
+                binding.rbNegative.id -> updateDisplayChart(ChartTypes.NEGATIVE)
+                binding.rbPositive.id -> updateDisplayChart(ChartTypes.POSITIVE)
+                binding.rbDeath.id -> updateDisplayChart(ChartTypes.DEATH)
+            }
+        }
+    }
+
+    private fun updateDisplayChart(types: ChartTypes) {
+        val colorResult = when (types) {
+            ChartTypes.NEGATIVE -> R.color.colorNegative
+            ChartTypes.POSITIVE -> R.color.colorPositive
+            ChartTypes.DEATH -> R.color.colorDeath
+        }
+
+        @ColorInt
+        val colorInt = ContextCompat.getColor(this, colorResult)
+        binding.svChart.lineColor = colorInt
+        binding.tvData.setTextColor(colorInt)
+
+        adapter.type = types
+        adapter.notifyDataSetChanged()
+
+        renderDisplayWithData(currentlyShownData.last())
     }
 
     private fun renderDisplayWithData(data: ApiData) {
@@ -63,7 +106,7 @@ class DetailStatsActivity : AppCompatActivity() {
             ChartTypes.DEATH -> data.deathIncrease
         }
         binding.tvData.text = NumberFormat.getInstance().format(typeCases)
-        val displayDateFormat = SimpleDateFormat("MMM dd, yyyy")
+        val displayDateFormat = SimpleDateFormat("MMM dd, yyyy", Locale.US)
         binding.tvDate.text = displayDateFormat.format(data.dateChecked)
     }
 

@@ -1,5 +1,6 @@
 package com.rayhan.newnormalguide.ui.detail_stats
 
+import android.graphics.RectF
 import com.rayhan.newnormalguide.data.api.ApiData
 import com.robinhood.spark.SparkAdapter
 
@@ -21,4 +22,11 @@ class ChartSparkAdapter(private val listData: List<ApiData>) : SparkAdapter() {
         }
     }
 
+    override fun getDataBounds(): RectF {
+        val dataBounds = super.getDataBounds()
+        if (time != TimeStamps.MAX) {
+            dataBounds.left = count - time.numDays.toFloat()
+        }
+        return dataBounds
+    }
 }
