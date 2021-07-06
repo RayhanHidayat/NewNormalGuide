@@ -83,8 +83,8 @@
 
             <TableRow>
 
-                <TextView
-                    android:id="@+id/tv_sembuh"
+                <com.robinhood.ticker.TickerView
+                    android:id="@+id/ticker_sembuh"
                     android:layout_width="0dp"
                     android:fontFamily="@font/poppins_medium"
                     android:gravity="center"
@@ -93,8 +93,8 @@
                     android:textColor="@color/colorNegative"
                     android:textSize="25sp" />
 
-                <TextView
-                    android:id="@+id/tv_positif"
+                <com.robinhood.ticker.TickerView
+                    android:id="@+id/ticker_positif"
                     android:layout_width="0dp"
                     android:fontFamily="@font/poppins_medium"
                     android:gravity="center"
@@ -103,8 +103,8 @@
                     android:textColor="@color/colorPositive"
                     android:textSize="25sp" />
 
-                <TextView
-                    android:id="@+id/tv_death"
+                <com.robinhood.ticker.TickerView
+                    android:id="@+id/ticker_death"
                     android:layout_width="0dp"
                     android:fontFamily="@font/poppins_medium"
                     android:gravity="center"

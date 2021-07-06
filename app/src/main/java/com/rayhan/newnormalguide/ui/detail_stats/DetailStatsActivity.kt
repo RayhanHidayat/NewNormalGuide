@@ -8,6 +8,7 @@ import androidx.core.content.ContextCompat
 import com.rayhan.newnormalguide.R
 import com.rayhan.newnormalguide.data.api.ApiData
 import com.rayhan.newnormalguide.databinding.ActivityDetailStatsBinding
+import com.robinhood.ticker.TickerUtils
 import java.text.NumberFormat
 import java.text.SimpleDateFormat
 import java.util.*
@@ -40,6 +41,7 @@ class DetailStatsActivity : AppCompatActivity() {
         detStatsViewModel.nationData.observe(this, {
 
             binding.run {
+                tickerData.setCharacterLists(TickerUtils.provideNumberList())
                 currentlyShownData = it
 
                 adapter = ChartSparkAdapter(it.reversed())
@@ -55,6 +57,7 @@ class DetailStatsActivity : AppCompatActivity() {
     }
 
     private fun setUpEventListener() {
+
         binding.svChart.isScrubEnabled = true
         binding.svChart.setScrubListener {
             if (it is ApiData) {
@@ -91,7 +94,7 @@ class DetailStatsActivity : AppCompatActivity() {
         @ColorInt
         val colorInt = ContextCompat.getColor(this, colorResult)
         binding.svChart.lineColor = colorInt
-        binding.tvData.setTextColor(colorInt)
+        binding.tickerData.setTextColor(colorInt)
 
         adapter.type = types
         adapter.notifyDataSetChanged()
@@ -105,7 +108,7 @@ class DetailStatsActivity : AppCompatActivity() {
             ChartTypes.NEGATIVE -> data.negativeIncrease
             ChartTypes.DEATH -> data.deathIncrease
         }
-        binding.tvData.text = NumberFormat.getInstance().format(typeCases)
+        binding.tickerData.text = NumberFormat.getInstance().format(typeCases)
         val displayDateFormat = SimpleDateFormat("MMM dd, yyyy", Locale.US)
         binding.tvDate.text = displayDateFormat.format(data.dateChecked)
     }

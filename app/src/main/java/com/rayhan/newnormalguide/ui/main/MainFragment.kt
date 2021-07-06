@@ -8,6 +8,7 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import com.rayhan.newnormalguide.databinding.FragmentMainBinding
 import com.rayhan.newnormalguide.ui.detail_stats.DetailStatsActivity
+import com.robinhood.ticker.TickerUtils
 import com.smarteist.autoimageslider.IndicatorView.animation.type.IndicatorAnimationType
 import com.smarteist.autoimageslider.SliderAnimations
 import splitties.fragments.start
@@ -16,7 +17,6 @@ import java.text.NumberFormat
 
 class MainFragment : Fragment(), View.OnClickListener {
 
-    private val year = 364
     private lateinit var binding: FragmentMainBinding
     private val mainViewModel by viewModels<MainViewModel>()
 
@@ -40,9 +40,13 @@ class MainFragment : Fragment(), View.OnClickListener {
             mainViewModel.getNationalData()
             mainViewModel.nationData.observe(viewLifecycleOwner, {
                 binding.run {
-                    tvPositif.text = NumberFormat.getInstance().format(it.last().positive)
-                    tvSembuh.text = NumberFormat.getInstance().format(it.last().negative)
-                    tvDeath.text = NumberFormat.getInstance().format(it.last().death)
+                    tickerPositif.setCharacterLists(TickerUtils.provideNumberList())
+                    tickerSembuh.setCharacterLists(TickerUtils.provideNumberList())
+                    tickerDeath.setCharacterLists(TickerUtils.provideNumberList())
+
+                    tickerPositif.text = NumberFormat.getInstance().format(it.last().positive)
+                    tickerSembuh.text = NumberFormat.getInstance().format(it.last().negative)
+                    tickerDeath.text = NumberFormat.getInstance().format(it.last().death)
                 }
             })
 
