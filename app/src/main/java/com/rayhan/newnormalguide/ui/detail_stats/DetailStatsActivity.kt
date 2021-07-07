@@ -41,7 +41,7 @@ class DetailStatsActivity : AppCompatActivity() {
 
         region = intent.getStringExtra(EXTRA_STATS).toString()
 
-        if (region.contentEquals(region)) {
+        if (region.contentEquals("Nation")) {
             detStatsViewModel.nationData.observe(this, {
                 renderAllData(it)
             })
