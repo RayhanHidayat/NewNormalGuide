@@ -14,7 +14,6 @@ import retrofit2.Response
 
 class MainViewModel(application: Application) : AndroidViewModel(application) {
 
-
     private val TAG = "MainViewModel"
     private val client = ApiConfig.getApiService(application)
 
@@ -28,11 +27,8 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
                 Log.i(TAG, "onResponse $response")
                 if (response.isSuccessful) {
 
-                    for (i in 0..364) {
-                        data.add(response.body()?.get(i)!!)
-                    }
+                    _nationData.value = declareData(response.body())
 
-                    _nationData.value = data
                     if (_nationData.value == null) {
                         Log.w(TAG, "Did not receive valid response")
                         return
@@ -49,4 +45,10 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
         })
     }
 
+    private fun declareData(body: List<ApiData>?): List<ApiData>? {
+        for (i in 0..364) {
+            data.add(body?.get(i)!!)
+        }
+        return data
+    }
 }

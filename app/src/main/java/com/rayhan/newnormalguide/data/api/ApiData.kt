@@ -19,5 +19,5 @@ data class ApiData(
     @SerializedName("deathIncrease")
     val deathIncrease: Int,
     @SerializedName("state")
-    val state: String
+    val state: String?
 )

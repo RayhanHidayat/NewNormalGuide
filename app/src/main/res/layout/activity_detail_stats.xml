@@ -44,7 +44,6 @@
         app:layout_constraintTop_toBottomOf="@+id/tv_title">
 
         <RadioButton
-            style="@style/RadioButtonCustom"
             android:id="@+id/rb_negative"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -66,11 +65,11 @@
 
     <com.robinhood.spark.SparkView
         android:id="@+id/sv_chart"
+        style="@style/ColorBackgroundShadow"
         android:layout_width="wrap_content"
         android:layout_height="0dp"
         android:paddingTop="8dp"
         android:paddingBottom="16dp"
-        android:background="@color/colorBackgroundShadow"
         app:layout_constraintBottom_toTopOf="@+id/rg_time"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -78,12 +77,12 @@
 
     <RadioGroup
         android:id="@+id/rg_time"
+        style="@style/ColorBackgroundShadow"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:gravity="center"
-        android:background="@color/colorBackgroundShadow"
-        android:orientation="horizontal"
         android:layout_marginTop="8dp"
+        android:gravity="center"
+        android:orientation="horizontal"
         android:paddingBottom="5dp"
         app:layout_constraintBottom_toTopOf="@+id/tv_date"
         app:layout_constraintEnd_toEndOf="parent"
@@ -114,9 +113,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="30dp"
-        android:paddingTop="5dp"
         android:layout_marginBottom="32dp"
         android:fontFamily="@font/poppins_bold"
+        android:paddingTop="5dp"
         android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"

@@ -64,7 +64,9 @@ class MainFragment : Fragment(), View.OnClickListener {
 
     override fun onClick(v: View?) {
         when (v) {
-            binding.cvStats -> start<DetailStatsActivity>()
+            binding.cvStats -> start<DetailStatsActivity> {
+                putExtra( DetailStatsActivity.EXTRA_STATS, "Nation")
+            }
         }
     }
 

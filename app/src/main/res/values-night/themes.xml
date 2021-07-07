@@ -36,4 +36,7 @@
         <item name="android:textColor">@color/color_button</item>
     </style>
 
+    <style name="ColorBackgroundShadow" parent="">
+        <item name="android:background">#222222</item>
+    </style>
 </resources>

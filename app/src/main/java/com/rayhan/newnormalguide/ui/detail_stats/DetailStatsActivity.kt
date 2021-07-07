@@ -20,6 +20,7 @@ class DetailStatsActivity : AppCompatActivity() {
     }
 
     private lateinit var currentlyShownData: List<ApiData>
+    private lateinit var region: String
     private lateinit var adapter: ChartSparkAdapter
     private lateinit var binding: ActivityDetailStatsBinding
     private val detStatsViewModel by viewModels<DetStatsViewModel>()
@@ -38,22 +39,52 @@ class DetailStatsActivity : AppCompatActivity() {
         detStatsViewModel.getNationalData()
         detStatsViewModel.getStatesData()
 
-        detStatsViewModel.nationData.observe(this, {
+        region = intent.getStringExtra(EXTRA_STATS).toString()
 
-            binding.run {
-                tickerData.setCharacterLists(TickerUtils.provideNumberList())
-                currentlyShownData = it
+        if (region.contentEquals(region)) {
+            detStatsViewModel.nationData.observe(this, {
+                renderAllData(it)
+            })
+        } else {
+            detStatsViewModel.statesData.observe(this, {
+                renderAllData(it)
+            })
+        }
 
-                adapter = ChartSparkAdapter(it.reversed())
-                svChart.adapter = adapter
+    }
 
-                rbPositive.isChecked = true
-                rbMonth.isChecked = true
+    private fun renderAllData(it: Map<String, List<ApiData>>?) {
+        binding.run {
+//            tickerData.setCharacterLists(TickerUtils.provideNumberList())
+//            currentlyShownData = it
+//
+//            adapter = ChartSparkAdapter(it)
+//            svChart.adapter = adapter
+//
+//            tvTitle.text = region
+//            rbPositive.isChecked = true
+//            rbMonth.isChecked = true
+//
+//            updateDisplayChart(ChartTypes.POSITIVE)
+//            setUpEventListener()
+        }
+    }
 
-                updateDisplayChart(ChartTypes.POSITIVE)
-                setUpEventListener()
-            }
-        })
+    private fun renderAllData(it: List<ApiData>) {
+        binding.run {
+            tickerData.setCharacterLists(TickerUtils.provideNumberList())
+            currentlyShownData = it
+
+            adapter = ChartSparkAdapter(it.reversed())
+            svChart.adapter = adapter
+
+            tvTitle.text = region
+            rbPositive.isChecked = true
+            rbMonth.isChecked = true
+
+            updateDisplayChart(ChartTypes.POSITIVE)
+            setUpEventListener()
+        }
     }
 
     private fun setUpEventListener() {

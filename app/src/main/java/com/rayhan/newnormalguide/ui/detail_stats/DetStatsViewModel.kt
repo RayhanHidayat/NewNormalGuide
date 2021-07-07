@@ -18,10 +18,10 @@ class DetStatsViewModel(application: Application) : AndroidViewModel(application
 
     private var data: MutableList<ApiData> = mutableListOf()
     private val _nationData = MutableLiveData<List<ApiData>>()
-    private val _statesData = MutableLiveData<List<ApiData>>()
+    private val _statesData = MutableLiveData<Map<String, List<ApiData>>>()
 
     val nationData: LiveData<List<ApiData>> = _nationData
-    val statesData: LiveData<List<ApiData>> = _statesData
+    val statesData: LiveData<Map<String, List<ApiData>>> = _statesData
 
     fun getNationalData() {
         client.getAllData().enqueue(object : Callback<List<ApiData>> {
@@ -29,10 +29,18 @@ class DetStatsViewModel(application: Application) : AndroidViewModel(application
                 Log.i(TAG, "onResponse $response")
                 if (response.isSuccessful) {
 
-                    for (i in 0..364) {
-                        data.add(response.body()?.get(i)!!)
+                    _nationData.value = declareData(response.body()!!).map {
+                        ApiData(
+                            it.dateChecked,
+                            it.death.coerceAtLeast(0),
+                            it.negative.coerceAtLeast(0),
+                            it.positive.coerceAtLeast(0),
+                            it.deathIncrease.coerceAtLeast(0),
+                            it.negativeIncrease.coerceAtLeast(0),
+                            it.positiveIncrease.coerceAtLeast(0),
+                            it.state
+                        )
                     }
-                    _nationData.value = data
 
                     if (_nationData.value == null) {
                         Log.w(TAG, "Did not receive valid response")
@@ -52,19 +60,35 @@ class DetStatsViewModel(application: Application) : AndroidViewModel(application
 
     fun getStatesData() {
         client.getAllStateData().enqueue(object : Callback<List<ApiData>> {
+            @Suppress("SENSELESS_COMPARISON")
             override fun onResponse(call: Call<List<ApiData>>, response: Response<List<ApiData>>) {
                 Log.i(TAG, "onResponse $response")
                 if (response.isSuccessful) {
-                    _statesData.value = response.body()
+
+                    _statesData.value =
+                        declareData(response.body()!!).filter {
+                            it.dateChecked != null
+                        }.map {
+                            ApiData(
+                                it.dateChecked,
+                                it.death.coerceAtLeast(0),
+                                it.negative.coerceAtLeast(0),
+                                it.positive.coerceAtLeast(0),
+                                it.deathIncrease.coerceAtLeast(0),
+                                it.negativeIncrease.coerceAtLeast(0),
+                                it.positiveIncrease.coerceAtLeast(0),
+                                it.state
+                            )
+                        }.reversed().groupBy {
+                            it.state.toString()
+                        }
 
                     if (_statesData.value == null) {
                         Log.w(TAG, "Did not receive valid response")
                         return
                     }
 
-                    _statesData.value!!.reversed().groupBy {
-                        it.state
-                    }
+
                 } else {
                     Log.w(TAG, "invalid response in onResponse")
                 }
@@ -75,5 +99,12 @@ class DetStatsViewModel(application: Application) : AndroidViewModel(application
             }
 
         })
+    }
+
+    private fun declareData(body: List<ApiData>): List<ApiData> {
+        for (i in 0..364) {
+            data.add(body.get(i))
+        }
+        return data
     }
 }
