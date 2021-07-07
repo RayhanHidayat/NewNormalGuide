@@ -25,26 +25,29 @@ class StatsFragment : Fragment() {
         return binding.root
     }
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
 
-        initiateData()
+        if (activity != null) {
+            statsViewModel.getStatesData()
+            statsViewModel.statesData.observe(viewLifecycleOwner, {
+
+                statesDivision = it.reversed().groupBy { it.state.toString() }
+                val keys = statesDivision.keys.toMutableList()
+                keys.sort()
+
+                for (i in keys) {
+                    statesList.add(statesDivision[i]!!.last())
+                }
+                val data = statesList
+
+                renderRecycleList()
+            })
+        }
     }
 
-    private fun initiateData() {
-        statsViewModel.getStatesData()
-        statsViewModel.statesData.observe(viewLifecycleOwner, {
-
-            statesDivision = it.reversed().groupBy { it.state.toString() }
-            renderRecycleList(statesDivision.keys)
-        })
-    }
-
-    private fun renderRecycleList(keys: Set<String>) {
-        binding.run {
-            for (i in keys) {
-                statesList.add(statesDivision[i]!!.last())
-            }
+    private fun renderRecycleList() {
+        with(binding) {
             rvData.setHasFixedSize(true)
             rvData.layoutManager = LinearLayoutManager(context)
             rvData.adapter = StatsAdapter(statesList)
