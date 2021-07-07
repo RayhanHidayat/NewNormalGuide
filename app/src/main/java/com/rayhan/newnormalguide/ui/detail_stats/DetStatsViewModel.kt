@@ -18,10 +18,10 @@ class DetStatsViewModel(application: Application) : AndroidViewModel(application
 
     private var data: MutableList<ApiData> = mutableListOf()
     private val _nationData = MutableLiveData<List<ApiData>>()
-    private val _statesData = MutableLiveData<Map<String, List<ApiData>>>()
+    private val _statesData = MutableLiveData<List<ApiData>>()
 
     val nationData: LiveData<List<ApiData>> = _nationData
-    val statesData: LiveData<Map<String, List<ApiData>>> = _statesData
+    val statesData: LiveData<List<ApiData>> = _statesData
 
     fun getNationalData() {
         client.getAllData().enqueue(object : Callback<List<ApiData>> {
@@ -79,8 +79,6 @@ class DetStatsViewModel(application: Application) : AndroidViewModel(application
                                 it.positiveIncrease.coerceAtLeast(0),
                                 it.state
                             )
-                        }.reversed().groupBy {
-                            it.state.toString()
                         }
 
                     if (_statesData.value == null) {

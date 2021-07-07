@@ -53,23 +53,6 @@ class DetailStatsActivity : AppCompatActivity() {
 
     }
 
-    private fun renderAllData(it: Map<String, List<ApiData>>?) {
-        binding.run {
-//            tickerData.setCharacterLists(TickerUtils.provideNumberList())
-//            currentlyShownData = it
-//
-//            adapter = ChartSparkAdapter(it)
-//            svChart.adapter = adapter
-//
-//            tvTitle.text = region
-//            rbPositive.isChecked = true
-//            rbMonth.isChecked = true
-//
-//            updateDisplayChart(ChartTypes.POSITIVE)
-//            setUpEventListener()
-        }
-    }
-
     private fun renderAllData(it: List<ApiData>) {
         binding.run {
             tickerData.setCharacterLists(TickerUtils.provideNumberList())
@@ -125,7 +108,7 @@ class DetailStatsActivity : AppCompatActivity() {
         @ColorInt
         val colorInt = ContextCompat.getColor(this, colorResult)
         binding.svChart.lineColor = colorInt
-        binding.tickerData.setTextColor(colorInt)
+        binding.tickerData.textColor = colorInt
 
         adapter.type = types
         adapter.notifyDataSetChanged()

@@ -17,9 +17,9 @@ class StatsViewModel(application: Application) : AndroidViewModel(application) {
     private val client = ApiConfig.getApiService(application)
 
     private var data: MutableList<ApiData> = mutableListOf()
-    private val _statesData = MutableLiveData<Map<String, List<ApiData>>>()
+    private val _statesData = MutableLiveData<List<ApiData>>()
 
-    val statesData: LiveData<Map<String, List<ApiData>>> = _statesData
+    val statesData: LiveData<List<ApiData>> = _statesData
 
     fun getStatesData() {
         client.getAllStateData().enqueue(object : Callback<List<ApiData>> {
@@ -42,8 +42,6 @@ class StatsViewModel(application: Application) : AndroidViewModel(application) {
                                 it.positiveIncrease.coerceAtLeast(0),
                                 it.state
                             )
-                        }.reversed().groupBy {
-                            it.state.toString()
                         }
 
                     if (_statesData.value == null) {

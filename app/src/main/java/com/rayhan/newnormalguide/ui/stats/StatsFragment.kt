@@ -13,6 +13,8 @@ import com.rayhan.newnormalguide.databinding.FragmentStatsBinding
 class StatsFragment : Fragment() {
 
     private lateinit var binding: FragmentStatsBinding
+    private lateinit var statesDivision: Map<String, List<ApiData>>
+    private lateinit var statesList: MutableList<ApiData>
     private val statsViewModel by viewModels<StatsViewModel>()
 
     override fun onCreateView(
@@ -32,18 +34,21 @@ class StatsFragment : Fragment() {
     private fun initiateData() {
         statsViewModel.getStatesData()
         statsViewModel.statesData.observe(viewLifecycleOwner, {
-            val statesList = it.keys.toMutableList()
-            statesList.sort()
 
-            renderRecycleList(it)
+            statesDivision = it.reversed().groupBy { it.state.toString() }
+            renderRecycleList(statesDivision.keys)
         })
     }
 
-    private fun renderRecycleList(map: Map<String, List<ApiData>>) {
+    private fun renderRecycleList(keys: Set<String>) {
         binding.run {
+            for (i in keys) {
+                statesList.add(statesDivision[i]!!.last())
+            }
             rvData.setHasFixedSize(true)
             rvData.layoutManager = LinearLayoutManager(context)
-            rvData.adapter = StatsAdapter(map.keys)
+            rvData.adapter = StatsAdapter(statesList)
         }
     }
+
 }
