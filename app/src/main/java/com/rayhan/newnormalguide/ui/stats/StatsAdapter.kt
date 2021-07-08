@@ -11,6 +11,8 @@ import java.text.NumberFormat
 class StatsAdapter(private val list: MutableList<ApiData>) :
     RecyclerView.Adapter<StatsAdapter.ViewHolder>() {
 
+    lateinit var listener: StatsRecyclerViewClickListener
+
     inner class ViewHolder(private val listItemBinding: ListItemBinding) :
         RecyclerView.ViewHolder(listItemBinding.root) {
 
@@ -33,7 +35,13 @@ class StatsAdapter(private val list: MutableList<ApiData>) :
         ListItemBinding.inflate(LayoutInflater.from(parent.context), parent, false)
     )
 
-    override fun onBindViewHolder(holder: ViewHolder, position: Int) = holder.bind(list[position])
+    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
+        holder.bind(list[position])
+
+        holder.itemView.setOnClickListener {
+            listener.onItemClicked(list[position])
+        }
+    }
 
     override fun getItemCount(): Int = list.size
 }

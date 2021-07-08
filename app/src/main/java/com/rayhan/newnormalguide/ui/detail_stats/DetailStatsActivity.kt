@@ -47,6 +47,15 @@ class DetailStatsActivity : AppCompatActivity() {
             })
         } else {
             detStatsViewModel.statesData.observe(this, {
+                val statesDivision = it.reversed().groupBy { it.state.toString() }
+                val keys = statesDivision.keys.toMutableList()
+                keys.sort()
+
+                for (i in keys) {
+                    if (i.contentEquals(region)){
+
+                    }
+                }
                 renderAllData(it)
             })
         }

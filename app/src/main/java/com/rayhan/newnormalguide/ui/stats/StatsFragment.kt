@@ -9,12 +9,13 @@ import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.rayhan.newnormalguide.data.api.ApiData
 import com.rayhan.newnormalguide.databinding.FragmentStatsBinding
+import com.rayhan.newnormalguide.ui.detail_stats.DetailStatsActivity
+import splitties.fragments.start
 
-class StatsFragment : Fragment() {
+class StatsFragment : Fragment(), StatsRecyclerViewClickListener {
 
     private lateinit var binding: FragmentStatsBinding
     private lateinit var statesDivision: Map<String, List<ApiData>>
-    private lateinit var statesList: MutableList<ApiData>
     private val statsViewModel by viewModels<StatsViewModel>()
 
     override fun onCreateView(
@@ -36,21 +37,35 @@ class StatsFragment : Fragment() {
                 val keys = statesDivision.keys.toMutableList()
                 keys.sort()
 
+                val statesList: MutableList<ApiData> = mutableListOf()
                 for (i in keys) {
-                    statesList.add(statesDivision[i]!!.last())
+                    statesList.add(statesDivision.getValue(i).last())
                 }
-                val data = statesList
 
-                renderRecycleList()
+                val listAdapter = StatsAdapter(statesList)
+
+                renderDataToRecycler(listAdapter)
+
             })
         }
     }
 
-    private fun renderRecycleList() {
+    private fun renderDataToRecycler(listAdapter: StatsAdapter) {
         with(binding) {
             rvData.setHasFixedSize(true)
             rvData.layoutManager = LinearLayoutManager(context)
-            rvData.adapter = StatsAdapter(statesList)
+            rvData.adapter = listAdapter
+            listAdapter.listener = this@StatsFragment
+        }
+    }
+
+    override fun onItemClicked(apiData: ApiData) {
+        showSelectedData(apiData)
+    }
+
+    private fun showSelectedData(data: ApiData) {
+        start<DetailStatsActivity> {
+            putExtra(DetailStatsActivity.EXTRA_STATS, data.state)
         }
     }
 
