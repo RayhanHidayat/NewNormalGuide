@@ -20,6 +20,7 @@ class DetailStatsActivity : AppCompatActivity() {
     }
 
     private lateinit var currentlyShownData: List<ApiData>
+    private lateinit var nationalData: List<ApiData>
     private lateinit var region: String
     private lateinit var adapter: ChartSparkAdapter
     private lateinit var binding: ActivityDetailStatsBinding
@@ -41,22 +42,23 @@ class DetailStatsActivity : AppCompatActivity() {
 
         region = intent.getStringExtra(EXTRA_STATS).toString()
 
-        if (region.contentEquals("Nation")) {
-            detStatsViewModel.nationData.observe(this, {
-                renderAllData(it)
-            })
-        } else {
+
+        detStatsViewModel.nationData.observe(this, {
+            if (region.contentEquals("Nation")) renderAllData(it)
+            nationalData = it
+        })
+
+        if (!region.contentEquals("Nation")){
             detStatsViewModel.statesData.observe(this, {
-                val statesDivision = it.reversed().groupBy { it.state.toString() }
+                val statesDivision = it.groupBy { it.state.toString() }
                 val keys = statesDivision.keys.toMutableList()
                 keys.sort()
 
                 for (i in keys) {
-                    if (i.contentEquals(region)){
-
+                    if (i.contentEquals(region)) {
+                        renderAllData(statesDivision[i] ?: nationalData)
                     }
                 }
-                renderAllData(it)
             })
         }
 

@@ -55,8 +55,8 @@ class StatsFragment : Fragment(), StatsRecyclerViewClickListener {
             rvData.setHasFixedSize(true)
             rvData.layoutManager = LinearLayoutManager(context)
             rvData.adapter = listAdapter
-            listAdapter.listener = this@StatsFragment
         }
+        listAdapter.listener = this@StatsFragment
     }
 
     override fun onItemClicked(apiData: ApiData) {

@@ -1,100 +1,94 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/cv_stats"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    android:layout_margin="16dp"
+    android:background="?android:attr/selectableItemBackground"
+    android:clickable="true"
+    android:elevation="4dp"
+    android:focusable="true"
+    android:foreground="?attr/selectableItemBackground"
+    app:cardCornerRadius="6dp"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent">
 
-    <androidx.cardview.widget.CardView
-        android:id="@+id/cv_stats"
+    <TextView
+        android:id="@+id/tv_states"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="5dp"
+        android:fontFamily="@font/poppins_semibold"
+        android:textColor="?attr/colorOnSecondary"
+        android:textSize="16sp"
+        tools:text="Nation" />
+
+    <TableLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="16dp"
-        android:background="?android:attr/selectableItemBackground"
-        android:clickable="true"
-        android:elevation="4dp"
-        android:focusable="true"
-        android:foreground="?attr/selectableItemBackground"
-        app:cardCornerRadius="6dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        android:layout_marginTop="35dp"
+        android:stretchColumns="*">
 
-        <TextView
-            android:id="@+id/tv_states"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="10dp"
-            android:layout_marginTop="5dp"
-            android:fontFamily="@font/poppins_semibold"
-            android:textColor="?attr/colorOnSecondary"
-            android:textSize="16sp"
-            tools:text="Nation" />
+        <TableRow>
 
-        <TableLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="35dp"
-            android:stretchColumns="*">
+            <TextView
+                android:layout_width="0dp"
+                android:gravity="center"
+                android:padding="3dp"
+                android:text="@string/sembuh"
+                android:theme="@style/TextHeading" />
 
-            <TableRow>
+            <TextView
+                android:layout_width="0dp"
+                android:gravity="center"
+                android:padding="3dp"
+                android:text="@string/positif"
+                android:theme="@style/TextHeading" />
 
-                <TextView
-                    android:layout_width="0dp"
-                    android:gravity="center"
-                    android:padding="3dp"
-                    android:text="@string/sembuh"
-                    android:theme="@style/TextHeading" />
+            <TextView
+                android:layout_width="0dp"
+                android:gravity="center"
+                android:padding="3dp"
+                android:text="@string/meninggal"
+                android:theme="@style/TextHeading" />
+        </TableRow>
 
-                <TextView
-                    android:layout_width="0dp"
-                    android:gravity="center"
-                    android:padding="3dp"
-                    android:text="@string/positif"
-                    android:theme="@style/TextHeading" />
+        <TableRow>
 
-                <TextView
-                    android:layout_width="0dp"
-                    android:gravity="center"
-                    android:padding="3dp"
-                    android:text="@string/meninggal"
-                    android:theme="@style/TextHeading" />
-            </TableRow>
+            <com.robinhood.ticker.TickerView
+                android:id="@+id/ticker_sembuh"
+                android:layout_width="0dp"
+                android:fontFamily="@font/poppins_medium"
+                android:gravity="center"
+                android:padding="3dp"
+                android:text="@string/zero"
+                android:textColor="@color/colorNegative"
+                android:textSize="25sp" />
 
-            <TableRow>
+            <com.robinhood.ticker.TickerView
+                android:id="@+id/ticker_positif"
+                android:layout_width="0dp"
+                android:fontFamily="@font/poppins_medium"
+                android:gravity="center"
+                android:padding="3dp"
+                android:text="@string/zero"
+                android:textColor="@color/colorPositive"
+                android:textSize="25sp" />
 
-                <com.robinhood.ticker.TickerView
-                    android:id="@+id/ticker_sembuh"
-                    android:layout_width="0dp"
-                    android:fontFamily="@font/poppins_medium"
-                    android:gravity="center"
-                    android:padding="3dp"
-                    android:text="@string/zero"
-                    android:textColor="@color/colorNegative"
-                    android:textSize="25sp" />
+            <com.robinhood.ticker.TickerView
+                android:id="@+id/ticker_death"
+                android:layout_width="0dp"
+                android:fontFamily="@font/poppins_medium"
+                android:gravity="center"
+                android:padding="3dp"
+                android:text="@string/zero"
+                android:textColor="@color/colorDeath"
+                android:textSize="25sp" />
+        </TableRow>
+    </TableLayout>
 
-                <com.robinhood.ticker.TickerView
-                    android:id="@+id/ticker_positif"
-                    android:layout_width="0dp"
-                    android:fontFamily="@font/poppins_medium"
-                    android:gravity="center"
-                    android:padding="3dp"
-                    android:text="@string/zero"
-                    android:textColor="@color/colorPositive"
-                    android:textSize="25sp" />
-
-                <com.robinhood.ticker.TickerView
-                    android:id="@+id/ticker_death"
-                    android:layout_width="0dp"
-                    android:fontFamily="@font/poppins_medium"
-                    android:gravity="center"
-                    android:padding="3dp"
-                    android:text="@string/zero"
-                    android:textColor="@color/colorDeath"
-                    android:textSize="25sp" />
-            </TableRow>
-        </TableLayout>
-
-    </androidx.cardview.widget.CardView>
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.cardview.widget.CardView>
