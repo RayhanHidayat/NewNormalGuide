@@ -48,7 +48,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/linear_divider"
-            tools:listitem="@layout/list_item" />
+            tools:listitem="@layout/list_item_covid" />
 
         <LinearLayout
             android:id="@+id/linear_divider_two"
@@ -86,7 +86,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/linear_divider_two"
-            tools:listitem="@layout/list_item" />
+            tools:listitem="@layout/list_item_covid" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
