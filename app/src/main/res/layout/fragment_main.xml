@@ -38,6 +38,30 @@
 
     </androidx.cardview.widget.CardView>
 
+    <LinearLayout
+        android:id="@+id/linear_divider"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/card_view_top">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:gravity="start"
+            android:padding="3dp"
+            android:text="@string/total_kasus"
+            android:textSize="16sp"
+            android:theme="@style/TextHeading" />
+
+        <View style="@style/LineDivider" />
+
+    </LinearLayout>
+
     <androidx.cardview.widget.CardView
         android:id="@+id/cv_stats"
         android:layout_width="match_parent"
@@ -50,9 +74,10 @@
         app:cardCornerRadius="6dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/card_view_top">
+        app:layout_constraintTop_toBottomOf="@id/linear_divider">
 
         <TableLayout
+            android:id="@+id/table_case"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:stretchColumns="*">
@@ -116,6 +141,29 @@
         </TableLayout>
 
     </androidx.cardview.widget.CardView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/cv_stats">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:gravity="start"
+            android:padding="3dp"
+            android:textSize="16sp"
+            android:theme="@style/TextHeading"
+            tools:text="Berita Terkait" />
+
+        <View style="@style/LineDivider" />
+
+    </LinearLayout>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -57,6 +57,7 @@ class DetailStatsActivity : AppCompatActivity() {
                 for (i in keys) {
                     if (i.contentEquals(region)) {
                         renderAllData(statesDivision[i] ?: nationalData)
+                        break
                     }
                 }
             })
