@@ -39,14 +39,25 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
-            android:layout_marginTop="5dp"
+            android:layout_marginTop="10dp"
             android:fontFamily="@font/poppins_semibold"
             android:textColor="?attr/colorOnSecondary"
             android:textSize="16sp"
-            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toEndOf="@id/image_covid"
             app:layout_constraintTop_toTopOf="parent"
             tools:text="Mengenal" />
+
+        <TextView
+            android:id="@+id/tv_jns"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:fontFamily="@font/poppins_medium"
+            android:textSize="13sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@id/image_covid"
+            app:layout_constraintTop_toBottomOf="@id/tv_title"
+            tools:text="Covid-19" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

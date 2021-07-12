@@ -18,6 +18,7 @@ class GuideAdapter(private val list: MutableList<GuideData>) :
         fun bind(data: GuideData) {
             with(listItemCovidBinding) {
                 tvTitle.text = data.title
+                tvJns.text = data.type
 
                 Glide.with(itemView.context).load(data.symbolImg).into(imageCovid)
             }

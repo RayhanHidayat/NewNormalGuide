@@ -10,7 +10,8 @@ object GuideContent {
             GuideData(
                 "https://infeksiemerging.kemkes.go.id/storage/posts/July2021/8UJ3vSBWPPNRn55laHNv.png",
                 "Mengenal Covid-19",
-                R.drawable.ic_baseline_verified_user_24,
+                R.drawable.ic_baseline_coronavirus_24,
+                "Covid-19",
                 "alodokter.com",
                 "dr. Merry Dame Cristy Pane",
                 "Virus Corona atau severe acute respiratory syndrome coronavirus 2 (SARS-CoV-2) adalah virus yang menyerang sistem pernapasan. Penyakit karena infeksi virus ini disebut COVID-19. Virus Corona bisa menyebabkan gangguan ringan pada sistem pernapasan, infeksi paru-paru yang berat, hingga kematian.",
@@ -22,7 +23,8 @@ object GuideContent {
             GuideData(
                 "https://covid19.go.id/storage/app/media/slider-oct.png",
                 "Mencegah Covid-19",
-                R.drawable.ic_baseline_verified_user_24,
+                R.drawable.ic_baseline_coronavirus_24,
+                "Covid-19",
                 "alodokter.com",
                 "dr. Merry Dame Cristy Pane",
                 "Saat ini, Indonesia sedang melakukan vaksinasi COVID-19 secara berkala ke masyarakat Indonesia. Meskipun vaksinasi sudah mulai di jalankan, cara pencegahan yang terbaik adalah dengan menghindari faktor-faktor yang bisa menyebabkan Anda terinfeksi virus ini, yaitu:",
@@ -34,7 +36,8 @@ object GuideContent {
             GuideData(
                 "https://asset.kompas.com/crops/9JMhd8nEs-LaSgfKJ_Qs-M7jZ2o=/63x11:409x243/750x500/data/photo/2020/03/26/5e7c626d24bbb.jpg",
                 "Menginndikasi Covid-19",
-                R.drawable.ic_baseline_verified_user_24,
+                R.drawable.ic_baseline_coronavirus_24,
+                "Covid-19",
                 "alodokter.com",
                 "dr. Merry Dame Cristy Pane",
                 "Untuk menentukan apakah pasien terinfeksi virus Corona, dokter akan menanyakan gejala yang dialami pasien dan apakah pasien baru saja bepergian atau tinggal di daerah yang memiliki kasus infeksi virus Corona sebelum gejala muncul. Dokter juga akan menanyakan apakah pasien ada kontak dengan orang yang menderita atau diduga menderita COVID-19.",
@@ -46,7 +49,8 @@ object GuideContent {
             GuideData(
                 "https://www.hpi.or.id/wp-content/uploads/2020/03/Coronavirus.jpg",
                 "Mengobati Covid-19",
-                R.drawable.ic_baseline_verified_user_24,
+                R.drawable.ic_baseline_coronavirus_24,
+                "Covid-19",
                 "alodokter.com",
                 "dr. Merry Dame Cristy Pane",
                 "Belum ada obat yang benar-benar efektif untuk mengatasi infeksi virus Corona atau COVID-19. Pilihan pengobatan akan disesuaikan dengan kondisi pasien dan tingkat keparahannya. ",
