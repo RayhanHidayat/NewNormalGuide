@@ -3,6 +3,7 @@ package com.rayhan.newnormalguide.ui.guide
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 import com.rayhan.newnormalguide.databinding.ListItemCovidBinding
 import com.rayhan.newnormalguide.ui.stats.GuideRecyclerViewClickListener
 
@@ -18,6 +19,7 @@ class GuideAdapter(private val list: MutableList<GuideData>) :
             with(listItemCovidBinding) {
                 tvTitle.text = data.title
 
+                Glide.with(itemView.context).load(data.symbolImg).into(imageCovid)
             }
         }
     }

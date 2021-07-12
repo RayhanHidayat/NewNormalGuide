@@ -1,7 +1,6 @@
-package com.rayhan.newnormalguide.ui.stats
+package com.rayhan.newnormalguide.ui.guide
 
 import com.rayhan.newnormalguide.R
-import com.rayhan.newnormalguide.ui.guide.GuideData
 
 object GuideContent {
     fun generateDataCovid(): MutableList<GuideData> {
@@ -9,7 +8,7 @@ object GuideContent {
 
         data.add(
             GuideData(
-                null,
+                "https://infeksiemerging.kemkes.go.id/storage/posts/July2021/8UJ3vSBWPPNRn55laHNv.png",
                 "Mengenal Covid-19",
                 R.drawable.ic_baseline_verified_user_24,
                 "alodokter.com",
@@ -21,7 +20,7 @@ object GuideContent {
 
         data.add(
             GuideData(
-                null,
+                "https://covid19.go.id/storage/app/media/slider-oct.png",
                 "Mencegah Covid-19",
                 R.drawable.ic_baseline_verified_user_24,
                 "alodokter.com",
@@ -33,7 +32,7 @@ object GuideContent {
 
         data.add(
             GuideData(
-                null,
+                "https://asset.kompas.com/crops/9JMhd8nEs-LaSgfKJ_Qs-M7jZ2o=/63x11:409x243/750x500/data/photo/2020/03/26/5e7c626d24bbb.jpg",
                 "Menginndikasi Covid-19",
                 R.drawable.ic_baseline_verified_user_24,
                 "alodokter.com",
@@ -45,7 +44,7 @@ object GuideContent {
 
         data.add(
             GuideData(
-                null,
+                "https://www.hpi.or.id/wp-content/uploads/2020/03/Coronavirus.jpg",
                 "Mengobati Covid-19",
                 R.drawable.ic_baseline_verified_user_24,
                 "alodokter.com",

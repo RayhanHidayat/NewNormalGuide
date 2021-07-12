@@ -18,6 +18,5 @@
     <string name="one_month">1 Month</string>
     <string name="max">Max</string>
     <string name="total_kasus">Total Kasus</string>
-    <string name="covid_19">Covid-19</string>
-    <string name="new_normal">New Normal</string>
+    <string name="covid_19">Covid-19 dan New Normal</string>
 </resources>

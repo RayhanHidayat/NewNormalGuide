@@ -5,9 +5,11 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.rayhan.newnormalguide.databinding.FragmentGuideBinding
+import com.rayhan.newnormalguide.ui.stats.GuideRecyclerViewClickListener
 
-class GuideFragment : Fragment() {
+class GuideFragment : Fragment(), GuideRecyclerViewClickListener {
 
     private lateinit var binding: FragmentGuideBinding
 
@@ -23,7 +25,23 @@ class GuideFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         if (activity!= null) {
+            with(binding) {
+                rvCovid.setHasFixedSize(true)
+                rvCovid.layoutManager = LinearLayoutManager(context)
 
+                val adapter = GuideAdapter(GuideContent.generateDataCovid())
+                rvCovid.adapter = adapter
+                adapter.listener = this@GuideFragment
+
+            }
         }
+    }
+
+    override fun onItemClicked(data: GuideData) {
+        showSelectedData(data)
+    }
+
+    private fun showSelectedData(data: GuideData) {
+
     }
 }
