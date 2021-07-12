@@ -60,7 +60,7 @@ object GuideContent {
         data.add(
             GuideData(
                 null,
-                "New Normal: Saat Keluar Rumah",
+                "Saat Keluar Rumah",
                 R.drawable.ic_baseline_verified_user_24,
                 "New Normal",
                 "alodokter.com",
@@ -72,7 +72,7 @@ object GuideContent {
         data.add(
             GuideData(
                 null,
-                "New Normal: Saat Menggunakan Transportasi Umum",
+                "Saat Menggunakan\nTransportasi Umum",
                 R.drawable.ic_baseline_verified_user_24,
                 "New Normal",
                 "alodokter.com",
@@ -84,7 +84,7 @@ object GuideContent {
         data.add(
             GuideData(
                 null,
-                "New Normal: Selama Bekerja di Kantor",
+                "Selama Bekerja di Kantor",
                 R.drawable.ic_baseline_verified_user_24,
                 "New Normal",
                 "alodokter.com",
@@ -96,7 +96,7 @@ object GuideContent {
         data.add(
             GuideData(
                 null,
-                "New Normal: Ketika Berbelanja",
+                "Ketika Berbelanja",
                 R.drawable.ic_baseline_verified_user_24,
                 "New Normal",
                 "alodokter.com",
@@ -108,7 +108,7 @@ object GuideContent {
         data.add(
             GuideData(
                 null,
-                "New Normal: Ketika Berbelanja Online",
+                "Ketika Berbelanja Online",
                 R.drawable.ic_baseline_verified_user_24,
                 "New Normal",
                 "alodokter.com",
@@ -126,7 +126,7 @@ object GuideContent {
         data.add(
             GuideData(
                 null,
-                "New Normal: Ketika Membutuhkan Layanan Kesehatan",
+                "Ketika Membutuhkan\nLayanan Kesehatan",
                 R.drawable.ic_baseline_verified_user_24,
                 "New Normal",
                 "alodokter.com",
