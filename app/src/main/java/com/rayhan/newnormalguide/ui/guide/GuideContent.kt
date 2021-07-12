@@ -59,7 +59,7 @@ object GuideContent {
         )
         data.add(
             GuideData(
-                null,
+                "https://www.euractiv.com/wp-content/uploads/sites/2/2020/03/shutterstock_324566462-800x450.jpg",
                 "Saat Keluar Rumah",
                 R.drawable.ic_baseline_verified_user_24,
                 "New Normal",
@@ -71,7 +71,7 @@ object GuideContent {
         )
         data.add(
             GuideData(
-                null,
+                "https://ichef.bbci.co.uk/news/976/cpsprodpb/92EE/production/_101841673_medicine_gettyimages-493249762.jpg",
                 "Saat Menggunakan\nTransportasi Umum",
                 R.drawable.ic_baseline_verified_user_24,
                 "New Normal",
@@ -83,7 +83,7 @@ object GuideContent {
         )
         data.add(
             GuideData(
-                null,
+                "https://www.massgeneral.org/assets/MGH/images/medicine/Home-Option2.jpg",
                 "Selama Bekerja di Kantor",
                 R.drawable.ic_baseline_verified_user_24,
                 "New Normal",
@@ -95,7 +95,7 @@ object GuideContent {
         )
         data.add(
             GuideData(
-                null,
+                "https://nu.aeon.co/images/afef287f-dd6f-4a6a-b8a6-4f0a09330657/header_sized-kendal-l4ikccachoc-unsplash.jpg",
                 "Ketika Berbelanja",
                 R.drawable.ic_baseline_verified_user_24,
                 "New Normal",
@@ -107,7 +107,7 @@ object GuideContent {
         )
         data.add(
             GuideData(
-                null,
+                "https://asset.kompas.com/crops/fTlCX6DxXZ4G1j1L7MgM8jXKu6A=/0x0:800x533/780x390/data/photo/2017/09/28/2918404798.jpg",
                 "Ketika Berbelanja Online",
                 R.drawable.ic_baseline_verified_user_24,
                 "New Normal",
@@ -125,7 +125,7 @@ object GuideContent {
         )
         data.add(
             GuideData(
-                null,
+                "https://asset.kompas.com/crops/HvpM6gsOYjNtQaIQKkQpt5rHGOU=/0x0:780x520/750x500/data/photo/2020/02/26/5e564b40344d7.jpg",
                 "Ketika Membutuhkan\nLayanan Kesehatan",
                 R.drawable.ic_baseline_verified_user_24,
                 "New Normal",

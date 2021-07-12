@@ -5,7 +5,6 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.rayhan.newnormalguide.databinding.ListItemCovidBinding
-import com.rayhan.newnormalguide.ui.stats.GuideRecyclerViewClickListener
 
 class GuideAdapter(private val list: MutableList<GuideData>) :
     RecyclerView.Adapter<GuideAdapter.ViewHolder>() {

@@ -7,7 +7,6 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.rayhan.newnormalguide.databinding.FragmentGuideBinding
-import com.rayhan.newnormalguide.ui.stats.GuideRecyclerViewClickListener
 
 class GuideFragment : Fragment(), GuideRecyclerViewClickListener {
 
