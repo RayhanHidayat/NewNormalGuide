@@ -105,12 +105,38 @@ object GuideContent {
                 "Batasi menyentuh barang-barang di toko maupun di tempat umum. Setelah menyentuh barang-barang tersebut, jangan menyentuh wajah atau barang-barang pribadi, misalnya tas dan handphone, sebelum mencuci tangan. Tujuannya adalah untuk mengurangi risiko terkontaminasi virus Corona.\nSelain itu, usahakan untuk tidak berlama-lama saat belanja. Catat barang-barang apa saja yang perlu dibeli dan langsung ke kasir ketika semua sudah Anda dapatkan.\nHal ini pun berlaku bila kamu dan keluarga makan di restoran. Ketika makan, kamu tentu harus melepas masker. Jadi, pilihlah tempat makan dengan ventilasi yang baik agar ada pertukaran udara di tempat tersebut. Ingat, selalu jaga jarak dengan orang lain, termasuk pramusaji, pengunjung lain, dan kasir, ya.\nSewaktu membayar, gunakan metode pembayaran nontunai untuk mencegah kontaminasi. Namun, jika tidak memungkinkan, pastikan untuk langsung mencuci tangan setelah memegang uang ataupun kartu."
             )
         )
-//        data.add(
-//            GuideData(
-//                null,
-//                "New Normal"
-//            )
-//        )
+        data.add(
+            GuideData(
+                null,
+                "New Normal: Ketika Berbelanja Online",
+                R.drawable.ic_baseline_verified_user_24,
+                "New Normal",
+                "alodokter.com",
+                "dr. Meva Nareza",
+                "Sejak pandemi, belanja online makin banyak diminati, karena orang bisa berbelanja dengan mudah tanpa harus keluar rumah. Melalui belanja online, kita bisa membeli makanan, minuman, atau barang yang kita butuhkan meskipun hampir seluruh mall dan pusat perbelanjaan tutup selama PSBB.",
+                "Meski begitu, ada beberapa hal yang harus kamu perhatikan, yaitu:\n" +
+                        "1. Hindari kontak langsung dengan kurir. Bila perlu, kenakan masker saat bertransaksi.\n" +
+                        "2. Upayakan untuk membayar barang belanjaan dengan secara nontunai untuk meminimalkan interaksi dengan kurir.\n" +
+                        "3. Sediakan tempat khusus bagi kurir menaruh barang pesananmu, agar kamu tidak perlu bertemu langsung atau bersentuhan dengan kurir ketika menerima barang.\n" +
+                        "4. Buka bungkus paket di luar rumah dan segera buang bungkusnya di tempat sampah atau semprot bungkus paket dengan disinfektan sebelum membawanya masuk ke dalam rumah.\n" +
+                        "5. Untuk makanan, jangan menyemprotkan disinfektan ke bungkusnya. Cukup buka dan buang bungkusnya, lalu pindahkan makanan ke piring. Jangan makan makanan langsung dari wadahnya.\n" +
+                        "6. Setelah membuka kemasan paket barang atau makanan, langsung cuci tangan dengan sabun dan air mengalir.\n"
+            )
+        )
+        data.add(
+            GuideData(
+                null,
+                "New Normal: Ketika Membutuhkan Layanan Kesehatan",
+                R.drawable.ic_baseline_verified_user_24,
+                "New Normal",
+                "alodokter.com",
+                "dr. Meva Nareza",
+                "Alih-alih berkonsultasi langsung dengan dokter di rumah sakit, lebih baik gunakan fasilitas telemedicine. Kamu bisa menggunakan aplikasi ALODOKTER untuk berkonsultasi dengan dokter umum maupun dokter spesialis.",
+                "Kamu juga bisa membuat janji konsultasi dengan dokter di rumah sakit melalui aplikasi ALODOKTER jika memang memerlukan pemeriksaan atau penanganan langsung dari dokter.\n" +
+                        "Berkonsultasi secara online lewat aplikasi kesehatan dinilai lebih aman untuk mencegah penularan virus Corona, khususnya bagi orang-orang dengan penyakit yang rentan terkena COVID-19, seperti diabetes atau penyakit jantung.\n" +
+                        "Jika kamu memiliki bayi yang harus menjalani imunisasi atau kamu sedang hamil dan perlu memeriksakan kehamilan, ikuti panduan imunisasi dan pemeriksaan kehamilan yang dianjurkan oleh dokter selama pandemi COVID-19 ini, ya."
+            )
+        )
 
         return data
     }
