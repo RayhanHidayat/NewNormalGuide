@@ -57,6 +57,60 @@ object GuideContent {
                 "Beberapa pasien dengan gejala ringan atau tanpa gejala akan di sarankan untuk melakukan protokol isolasi mandiri di rumah sambil tetap melakukan langkah pencegahan penyebaran infeksi virus Corona.\nSelain itu, dokter juga bisa memberikan beberapa beberapa langkah untuk meredakan gejalanya dan mencegah penyebaran virus corona, yaitu:\n1. Merujuk penderita COVID-19 yang berat untuk menjalani perawatan dan karatina di rumah sakit rujukan\n2. Memberikan obat pereda demam dan nyeri yang aman dan sesuai kondisi penderita\n3. Menganjurkan penderita COVID-19 untuk melakukan isolasi mandiri dan istirahat yang cukup\n4. Menganjurkan penderita COVID-19 untuk banyak minum air putih untuk menjaga kadar cairan tubuh"
             )
         )
+        data.add(
+            GuideData(
+                null,
+                "New Normal: Saat Keluar Rumah",
+                R.drawable.ic_baseline_verified_user_24,
+                "New Normal",
+                "alodokter.com",
+                "dr. Meva Nareza",
+                "Penerapan new normal akan membuat kita lebih longgar untuk keluar rumah. Namun, mengingat pandemi COVID-19 masih berlangsung, kita harus tetap menerapkan langkah pencegahan dasar kapan pun dan di mana pun kita berada.",
+                "Selain itu, jangan memaksakan diri untuk keluar rumah saat sedang tidak fit. Bila keperluan sudah selesai, segera kembali ke rumah. Sesampainya di rumah, langsung lakukan beberapa hal berikut:\n1. Buka alas kaki sebelum masuk ke dalam rumah.\n2. Semprotkan disinfektan pada alas kaki maupun peralatan yang kamu gunakan.\n3. Cuci tangan dengan air dan sabun.\n4. Lepaskan pakaian yang dikenakan dan segera masukkan ke dalam tempat cucian yang tertutup.\n5. Mandi dan berganti pakaian bersih sebelum bersantai atau berkumpul dengan keluarga."
+            )
+        )
+        data.add(
+            GuideData(
+                null,
+                "New Normal: Saat Menggunakan Transportasi Umum",
+                R.drawable.ic_baseline_verified_user_24,
+                "New Normal",
+                "alodokter.com",
+                "dr. Meva Nareza",
+                "Bila kamu harus bepergian ke suatu tempat dan menggunakan transportasi umum, ada beberapa hal yang perlu diperhatikan selain menerapkan langkah pencegahan dasar.",
+                "Untuk memudahkanmu dalam menjaga kebersihan tangan, bawalah selalu hand sanitizer. Jangan menyentuh wajah dengan tangan yang belum dibersihkan. Selain itu, pastikan kamu membawa botol minum agar tetap terhidrasi selama perjalanan\n Yang paling penting untuk diingat selama berada di dalam transportasi umum adalah mengurangi interaksi dan menjaga jarak setidaknya 1 meter dengan penumpang lain. Bila hal ini tidak memungkinkan, sebaiknya jangan menggunakan transportasi umum.",
+            )
+        )
+        data.add(
+            GuideData(
+                null,
+                "New Normal: Selama Bekerja di Kantor",
+                R.drawable.ic_baseline_verified_user_24,
+                "New Normal",
+                "alodokter.com",
+                "dr. Meva Nareza",
+                "Dimulainya new normal akan membuat para karyawan kembali bekerja di kantor secara bertahap setelah beberapa bulan bekerja dari rumah. Nah, agar tetap aman dan terhindar dari virus Corona di tempat kerja, kamu perlu menerapkan pshysical distancing dalam setiap kegiatan di kantor.",
+                "Ketika beraktivitas di meja kerja ataupun saat rapat, pastikan jarak antarkursi minimal 1 meter. Bila ada rekan kerja yang duduk dengan jarak kurang dari itu, jangan ragu untuk menegur dan mengingatkannya agar menjaga jarak.\nBegitu juga saat makan siang. Jika sebelumnya kamu terbiasa makan di kantin, sementara ini usahakan untuk selalu membawa bekal dari rumah agar kamu tidak perlu ke tempat yang ramai untuk membeli makanan. Saat makan siang bersama di kantor pun tetap jaga jarak dengan rekan-rekan sekantor.\nBila kamu sakit, mintalah izin untuk tidak masuk kerja, atau bila memungkinkan, bekerjalah dari rumah dulu untuk sementara waktu."
+            )
+        )
+        data.add(
+            GuideData(
+                null,
+                "New Normal: Ketika Berbelanja",
+                R.drawable.ic_baseline_verified_user_24,
+                "New Normal",
+                "alodokter.com",
+                "dr. Meva Nareza",
+                "Bila kamu harus berbelanja membeli bahan makanan, kemungkinan kamu akan bertemu dengan banyak orang. Ingat, selalu terapkan physical distancing, ya.",
+                "Batasi menyentuh barang-barang di toko maupun di tempat umum. Setelah menyentuh barang-barang tersebut, jangan menyentuh wajah atau barang-barang pribadi, misalnya tas dan handphone, sebelum mencuci tangan. Tujuannya adalah untuk mengurangi risiko terkontaminasi virus Corona.\nSelain itu, usahakan untuk tidak berlama-lama saat belanja. Catat barang-barang apa saja yang perlu dibeli dan langsung ke kasir ketika semua sudah Anda dapatkan.\nHal ini pun berlaku bila kamu dan keluarga makan di restoran. Ketika makan, kamu tentu harus melepas masker. Jadi, pilihlah tempat makan dengan ventilasi yang baik agar ada pertukaran udara di tempat tersebut. Ingat, selalu jaga jarak dengan orang lain, termasuk pramusaji, pengunjung lain, dan kasir, ya.\nSewaktu membayar, gunakan metode pembayaran nontunai untuk mencegah kontaminasi. Namun, jika tidak memungkinkan, pastikan untuk langsung mencuci tangan setelah memegang uang ataupun kartu."
+            )
+        )
+//        data.add(
+//            GuideData(
+//                null,
+//                "New Normal"
+//            )
+//        )
 
         return data
     }
