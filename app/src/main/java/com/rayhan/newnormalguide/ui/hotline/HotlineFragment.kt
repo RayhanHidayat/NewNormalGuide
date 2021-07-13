@@ -7,7 +7,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.rayhan.newnormalguide.databinding.FragmentHotlineBinding
 
-class HotlineFragment : Fragment() {
+class HotlineFragment : Fragment(), View.OnClickListener {
 
     private lateinit var binding: FragmentHotlineBinding
 
@@ -19,4 +19,17 @@ class HotlineFragment : Fragment() {
         return binding.root
     }
 
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        binding.cvSatu.setOnClickListener(this)
+        binding.cvDua.setOnClickListener(this)
+        binding.cvTiga.setOnClickListener(this)
+    }
+
+    override fun onClick(v: View?) {
+//        when (v) {
+//            binding.cvSatu ->
+//        }
+    }
 }
