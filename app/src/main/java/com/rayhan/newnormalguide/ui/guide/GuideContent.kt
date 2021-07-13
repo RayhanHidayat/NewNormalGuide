@@ -72,7 +72,7 @@ object GuideContent {
         data.add(
             GuideData(
                 "https://ichef.bbci.co.uk/news/976/cpsprodpb/92EE/production/_101841673_medicine_gettyimages-493249762.jpg",
-                "Saat Menggunakan\nTransportasi Umum",
+                "Saat Menggunakan Transportasi Umum",
                 R.drawable.ic_baseline_verified_user_24,
                 "New Normal",
                 "alodokter.com",
@@ -126,7 +126,7 @@ object GuideContent {
         data.add(
             GuideData(
                 "https://asset.kompas.com/crops/HvpM6gsOYjNtQaIQKkQpt5rHGOU=/0x0:780x520/750x500/data/photo/2020/02/26/5e564b40344d7.jpg",
-                "Ketika Membutuhkan\nLayanan Kesehatan",
+                "Ketika Membutuhkan Layanan Kesehatan",
                 R.drawable.ic_baseline_verified_user_24,
                 "New Normal",
                 "alodokter.com",
