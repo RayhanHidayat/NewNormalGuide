@@ -6,8 +6,13 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.rayhan.newnormalguide.databinding.FragmentMainBinding
+import com.rayhan.newnormalguide.ui.detail_news.DetailNewsActivity
 import com.rayhan.newnormalguide.ui.detail_stats.DetailStatsActivity
+import com.rayhan.newnormalguide.ui.guide.GuideContent
+import com.rayhan.newnormalguide.ui.guide.GuideData
+import com.rayhan.newnormalguide.ui.guide.GuideRecyclerViewClickListener
 import com.robinhood.ticker.TickerUtils
 import com.smarteist.autoimageslider.IndicatorView.animation.type.IndicatorAnimationType
 import com.smarteist.autoimageslider.SliderAnimations
@@ -15,7 +20,7 @@ import splitties.fragments.start
 import java.text.NumberFormat
 
 
-class MainFragment : Fragment(), View.OnClickListener {
+class MainFragment : Fragment(), View.OnClickListener, GuideRecyclerViewClickListener {
 
     private lateinit var binding: FragmentMainBinding
     private val mainViewModel by viewModels<MainViewModel>()
@@ -36,6 +41,7 @@ class MainFragment : Fragment(), View.OnClickListener {
             val urls = UrlList.images()
 
             val adapter = ImageSliderAdapter(urls)
+            val rvAdapter = MainRecyclerViewAdapter(GuideContent.generateDataCovid())
 
             mainViewModel.getNationalData()
             mainViewModel.nationData.observe(viewLifecycleOwner, {
@@ -57,6 +63,13 @@ class MainFragment : Fragment(), View.OnClickListener {
                 imageSlider.setSliderTransformAnimation(SliderAnimations.SIMPLETRANSFORMATION)
                 imageSlider.scrollTimeInSec = 2
                 imageSlider.startAutoCycle()
+
+                val horizontal = LinearLayoutManager(
+                    context, LinearLayoutManager.HORIZONTAL, false
+                )
+                rvData.layoutManager = horizontal
+                rvData.adapter = rvAdapter
+                rvAdapter.listener = this@MainFragment
             }
 
         }
@@ -65,8 +78,14 @@ class MainFragment : Fragment(), View.OnClickListener {
     override fun onClick(v: View?) {
         when (v) {
             binding.cvStats -> start<DetailStatsActivity> {
-                putExtra( DetailStatsActivity.EXTRA_STATS, "Nation")
+                putExtra(DetailStatsActivity.EXTRA_STATS, "Nation")
             }
+        }
+    }
+
+    override fun onItemClicked(data: GuideData) {
+        start<DetailNewsActivity> {
+            putExtra(DetailNewsActivity.EXTRA_NEWS, data)
         }
     }
 

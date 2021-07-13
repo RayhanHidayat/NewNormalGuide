@@ -36,7 +36,7 @@ class HotlineFragment : Fragment(), View.OnClickListener {
                 startActivity(browser)
             }
             binding.cvDua -> {
-                val phone = Intent(Intent.ACTION_CALL, Uri.parse("119"))
+                val phone = Intent(Intent.ACTION_DIAL, Uri.parse("tel: 119"))
                 startActivity(phone)
             }
             binding.cvTiga -> {

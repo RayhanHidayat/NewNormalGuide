@@ -19,4 +19,11 @@ class InfoFragment : Fragment() {
         return binding.root
     }
 
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        val text = "1. freecodecamp.org\n2. alodokter.com\n3. kompas.com"
+        binding.tvContentThree.text = text
+    }
+
 }

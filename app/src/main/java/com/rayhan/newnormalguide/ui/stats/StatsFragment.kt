@@ -30,6 +30,9 @@ class StatsFragment : Fragment(), StatsRecyclerViewClickListener {
         super.onViewCreated(view, savedInstanceState)
 
         if (activity != null) {
+            binding.shimmerLoad.visibility = View.VISIBLE
+            binding.shimmerLoad.startShimmer()
+
             statsViewModel.getStatesData()
             statsViewModel.statesData.observe(viewLifecycleOwner, {
 
@@ -52,6 +55,9 @@ class StatsFragment : Fragment(), StatsRecyclerViewClickListener {
 
     private fun renderDataToRecycler(listAdapter: StatsAdapter) {
         with(binding) {
+            shimmerLoad.stopShimmer()
+            shimmerLoad.visibility = View.GONE
+
             rvData.setHasFixedSize(true)
             rvData.layoutManager = LinearLayoutManager(context)
             rvData.adapter = listAdapter
