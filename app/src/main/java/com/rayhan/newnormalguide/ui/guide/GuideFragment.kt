@@ -7,6 +7,8 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.rayhan.newnormalguide.databinding.FragmentGuideBinding
+import com.rayhan.newnormalguide.ui.detail_news.DetailNewsActivity
+import splitties.fragments.start
 
 class GuideFragment : Fragment(), GuideRecyclerViewClickListener {
 
@@ -41,6 +43,8 @@ class GuideFragment : Fragment(), GuideRecyclerViewClickListener {
     }
 
     private fun showSelectedData(data: GuideData) {
-
+        start<DetailNewsActivity> {
+            putExtra(DetailNewsActivity.EXTRA_NEWS, data)
+        }
     }
 }

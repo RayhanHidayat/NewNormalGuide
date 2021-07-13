@@ -28,8 +28,10 @@ class HotlineFragment : Fragment(), View.OnClickListener {
     }
 
     override fun onClick(v: View?) {
-//        when (v) {
-//            binding.cvSatu ->
-//        }
+        when (v) {
+            binding.cvSatu -> {
+
+            }
+        }
     }
 }
