@@ -1,5 +1,7 @@
 package com.rayhan.newnormalguide.ui.hotline
 
+import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -30,7 +32,19 @@ class HotlineFragment : Fragment(), View.OnClickListener {
     override fun onClick(v: View?) {
         when (v) {
             binding.cvSatu -> {
-
+                val browser = Intent(Intent.ACTION_VIEW, Uri.parse("https://covid19.go.id/"))
+                startActivity(browser)
+            }
+            binding.cvDua -> {
+                val phone = Intent(Intent.ACTION_CALL, Uri.parse("119"))
+                startActivity(phone)
+            }
+            binding.cvTiga -> {
+                val browser = Intent(
+                    Intent.ACTION_VIEW,
+                    Uri.parse("https://www.kompas.com/tren/read/2020/03/03/183500265/infografik-daftar-100-rumah-sakit-rujukan-penanganan-virus-corona")
+                )
+                startActivity(browser)
             }
         }
     }
