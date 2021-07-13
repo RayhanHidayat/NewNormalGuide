@@ -19,5 +19,125 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <TextView
+        android:id="@+id/tv_content"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="8dp"
+        android:fontFamily="@font/poppins_medium"
+        android:text="@string/new_normal_guide_adalah"
+        app:layout_constrainedWidth="true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_title" />
+
+    <TextView
+        android:id="@+id/tv_title_two"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="20dp"
+        android:fontFamily="@font/poppins_bold"
+        android:text="@string/link_api"
+        android:textSize="15sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_content" />
+
+    <TextView
+        android:id="@+id/tv_content_two"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="8dp"
+        android:fontFamily="@font/poppins_medium"
+        android:text="@string/covidtracking_com"
+        app:layout_constrainedWidth="true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_title_two" />
+
+    <TextView
+        android:id="@+id/tv_title_three"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="20dp"
+        android:fontFamily="@font/poppins_bold"
+        android:text="@string/referensi"
+        android:textSize="15sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_content_two" />
+
+    <TextView
+        android:id="@+id/tv_content_three"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="8dp"
+        android:fontFamily="@font/poppins_medium"
+        app:layout_constrainedWidth="true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_title_three"
+        tools:text="@string/covidtracking_com" />
+
+    <TextView
+        android:id="@+id/tv_title_four"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="20dp"
+        android:fontFamily="@font/poppins_bold"
+        android:text="@string/designed_and_developed_by"
+        android:textSize="15sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_content_three" />
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/cirimg_rehan"
+        android:layout_width="90dp"
+        android:layout_height="90dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="10dp"
+        android:src="@drawable/profile_rehan"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_title_four" />
+
+    <TextView
+        android:id="@+id/tv_foto"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="8dp"
+        android:fontFamily="@font/poppins_medium"
+        app:layout_constrainedWidth="true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@id/cirimg_rehan"
+        app:layout_constraintTop_toBottomOf="@id/tv_title_four"
+        android:text="@string/rayhan_athaya_noor_hidayat" />
+
+    <TextView
+        android:id="@+id/tv_app"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="50dp"
+        android:textSize="18sp"
+        android:fontFamily="@font/poppins_bold"
+        android:textAllCaps="true"
+        android:textColor="?attr/colorSecondaryVariant"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/cirimg_rehan"
+        android:text="@string/app_name" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

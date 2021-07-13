@@ -22,4 +22,10 @@
     <string name="covid19_go_id">covid19.go.id</string>
     <string name="kementerian_kesehatan">Kementerian Kesehatan</string>
     <string name="daftar_rumah_sakit_rujukan">Daftar Rumah Sakit Rujukan</string>
+    <string name="new_normal_guide_adalah">New Normal Guide adalah aplikasi pemandu masyarakat untuk memulai aktivitas sehari-hari pada masa new normal ini. Aplikasi ini memiliki fitur-fitur yang berfungsi untuk melengkapi dan mempermudah kehidupan masyarakat saat new normal.</string>
+    <string name="link_api">Link API</string>
+    <string name="covidtracking_com">covidtracking.com</string>
+    <string name="referensi">Referensi</string>
+    <string name="designed_and_developed_by">Designed and Developed by</string>
+    <string name="rayhan_athaya_noor_hidayat">Rayhan Athaya Noor Hidayat</string>
 </resources>
