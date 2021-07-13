@@ -11,7 +11,8 @@
         android:roundIcon="@drawable/logo_new_nomal_guide_white"
         android:supportsRtl="true"
         android:theme="@style/Theme.NewNormalGuide">
-        <activity android:name=".ui.detail_stats.DetailStatsActivity"></activity>
+        <activity android:name=".ui.detail_news.DetailNewsActivity"></activity>
+        <activity android:name=".ui.detail_stats.DetailStatsActivity" />
         <activity android:name=".ui.splash.SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
